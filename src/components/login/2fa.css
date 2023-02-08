@@ -1,0 +1,9 @@
+.inputCode {
+    display: block;
+    border: none;
+    padding: 0;
+    width: 25em;
+    background: repeating-linear-gradient(90deg, dimgrey 0, dimgrey 1ch, transparent 0, transparent 3.5ch) 0 80%/20ch 2px no-repeat !important;
+    font: 5ch droid sans mono, consolas, monospace;
+    letter-spacing: 2.5ch;
+  }
