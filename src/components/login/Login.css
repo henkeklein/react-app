@@ -8,7 +8,9 @@
 }
 
 body {
-	background: linear-gradient(90deg, #C7C5F4, #776BCC);		
+	background: url(../../assets/login.svg);
+	background-repeat: no-repeat;
+    background-size: cover;		
 }
 
 .Login {

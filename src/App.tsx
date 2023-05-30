@@ -2,6 +2,7 @@
 import * as React from "react";
 import { Routes, Route, Outlet, Link } from "react-router-dom";
 import Login from "./components/login/Login";
+import Cocktails from "./components/cocktails/Cocktails";
 
 export default function App() {
   return (
@@ -11,8 +12,9 @@ export default function App() {
             parent route paths, and nested route elements render inside
             parent route elements. See the note about <Outlet> below. */}
       <Routes>
-          <Route path="/" element={<Dashboard />} />
-          <Route path="login" element={<Login />}>
+          <Route path="dashboard" element={<Dashboard />} />
+          <Route path="login" element={<Login />} />
+          <Route path="cocktails" element={<Cocktails />}>
 
           {/* Using path="*"" means "match anything", so this route
                 acts like a catch-all for URLs that we don't have explicit

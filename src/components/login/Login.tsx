@@ -7,6 +7,7 @@ import Button from "react-bootstrap/Button";
 import "./Login.css";
 import { makeLogin } from "../request/Requests";
 import MFA from "./2fa";
+import ReactDOM from "react-dom/client";
 
 export default function Login() {
 
@@ -23,10 +24,12 @@ export default function Login() {
   async function handleSubmit(event:any) {
     event.preventDefault();
     let data = await makeLogin ({username: email, password: password});
-    console.log(data);
     if (data.requires2FA) {
-      return (
-      <MFA username={email} password={password} />
+      const root = ReactDOM.createRoot(
+        document.getElementById('root') as HTMLElement
+      );
+      root.render(
+        <MFA username={email} password={password} />
       )
     }
   }
@@ -69,15 +72,15 @@ export default function Login() {
 
         </Form.Group>
 
-        <Button size="lg" type="submit" disabled={!validateForm()}>
+        <Button variant="primary" size="sm" type="submit" disabled={!validateForm()}>
 
           Login
 
         </Button>
 
       </Form>
-
     </div>
+
 
   );
 

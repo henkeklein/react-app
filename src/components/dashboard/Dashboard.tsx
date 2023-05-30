@@ -11,7 +11,7 @@ interface myProps {
     password: string
 }
 
-export default class MFA extends React.Component<myProps> {
+export default class Dashboard extends React.Component<myProps> {
     private show: boolean = true;
     private code: any = '';
     constructor(props: myProps | Readonly<myProps>) {
