@@ -50,7 +50,19 @@ export async function searchCocktailByName(search: string) {
 
 export async function searchCocktailByIngredient(search: string) {
     try {
-        const response = await fetch('https://thecocktaildb.com/api/json/v1/1/search.php?i=' + search);
+        const response = await fetch('https://thecocktaildb.com/api/json/v1/1/filter.php?i=' + search);
+        if (!response.ok) {
+            throw new Error('Could not fetch data')
+        }
+        return await response.json();
+    } catch (error) {
+        return error;
+    }
+}
+
+export async function getCocktailById(search: string) {
+    try {
+        const response = await fetch('https://thecocktaildb.com/api/json/v1/1/lookup.php?i=' + search);
         if (!response.ok) {
             throw new Error('Could not fetch data')
         }

@@ -14,7 +14,7 @@ export default function App() {
       <Routes>
           <Route path="dashboard" element={<Dashboard />} />
           <Route path="login" element={<Login />} />
-          <Route path="cocktails" element={<Cocktails />}>
+          <Route path="" element={<Cocktails />}>
 
           {/* Using path="*"" means "match anything", so this route
                 acts like a catch-all for URLs that we don't have explicit
